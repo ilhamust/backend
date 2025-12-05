@@ -8,6 +8,13 @@ const app = express();
 app.use(cors());
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
+app.get("/debug-env", (req, res) => {
+  res.json({
+    SUPABASE_URL: process.env.SUPABASE_URL,
+    SUPABASE_ANON_KEY: process.env.SUPABASE_ANON_KEY ? "OK" : "MISSING",
+    JWT_SECRET: process.env.JWT_SECRET ? "OK" : "MISSING"
+  });
+});
 
 app.use("/api", authRoutes);
 app.get("/", (_, res) => res.send("✅ Backend berjalan dengan baik!"));

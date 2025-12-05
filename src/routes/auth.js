@@ -8,13 +8,6 @@ dotenv.config();
 
 const router = express.Router();
 const supabase = createClient(process.env.SUPABASE_URL, process.env.SUPABASE_ANON_KEY);
-router.get("/debug", (req, res) => {
-  res.json({
-    SUPABASE_URL: process.env.SUPABASE_URL ? "OK" : "MISSING",
-    SUPABASE_ANON_KEY: process.env.SUPABASE_ANON_KEY ? "OK" : "MISSING",
-    JWT_SECRET: process.env.JWT_SECRET ? "OK" : "MISSING"
-  });
-});
 
 // Login Admin
 router.post("/login", async (req, res) => {
