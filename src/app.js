@@ -7,36 +7,10 @@ import authRoutes from "./routes/auth.js";
 dotenv.config();
 const app = express();
 
-// CORS Configuration - PENTING!
-const allowedOrigins = [
-  'http://localhost:5173',
-  'http://localhost:5174',
-  'http://localhost:3000',
-  'https://frontend-web-t636-dncpdman1-ilhamusts-projects.vercel.app/'
-  // Tambahkan URL Vercel kamu nanti setelah deploy
-  // 'https://your-app.vercel.app',
-  // 'https://your-app-*.vercel.app' // untuk preview deployments
-];
-
 app.use(cors({
-  origin: function(origin, callback) {
-    // Allow requests with no origin (mobile apps, Postman, curl)
-    if (!origin) return callback(null, true);
-    
-    // Check if origin ends with .vercel.app (untuk semua preview deployments)
-    if (origin.endsWith('.vercel.app')) {
-      return callback(null, true);
-    }
-    
-    if (allowedOrigins.indexOf(origin) !== -1) {
-      return callback(null, true);
-    }
-    
-    return callback(new Error('Not allowed by CORS'), false);
-  },
-  credentials: true,
-  methods: ['GET', 'POST', 'PUT', 'DELETE', 'OPTIONS', 'PATCH'],
-  allowedHeaders: ['Content-Type', 'Authorization', 'X-Requested-With']
+  origin:"https://frontend-web-t636-dncpdman1-ilhamusts-projects.vercel.app/",
+  methods:"GET,POST,DELETE",
+  allowedHeaders: "Content-Type, Authorization"
 }));
 
 app.use(express.json());
