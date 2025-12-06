@@ -7,14 +7,14 @@ import authRoutes from "./routes/auth.js";
 dotenv.config();
 const app = express();
 
-app.use(cors({
-  origin: [
-    "http://localhost:5173",
-    "https://frontend-web-t636-dncpdman1-ilhamusts-projects.vercel.app"
-  ],
-  methods: "GET,POST,DELETE",
-  allowedHeaders: "Content-Type, Authorization"
-}));
+// app.use(cors({
+//   origin: [
+//     "http://localhost:5173",
+//     "https://frontend-web-t636-dncpdman1-ilhamusts-projects.vercel.app"
+//   ],
+//   methods: "GET,POST,DELETE",
+//   allowedHeaders: "Content-Type, Authorization"
+// }));
 
 
 app.use(express.json());
