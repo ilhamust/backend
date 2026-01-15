@@ -13,9 +13,12 @@ app.use(cors({
     "https://frontend-web-t636-dncpdman1-ilhamusts-projects.vercel.app",
     "https://roudlotushsholihin.ponpes.id"
   ],
-  methods: "GET,POST,DELETE",
-  allowedHeaders: "Content-Type, Authorization"
+  methods: ["GET", "POST", "PUT", "DELETE", "OPTIONS"],
+  allowedHeaders: ["Content-Type", "Authorization"],
+  credentials: true
 }));
+
+app.options("*", cors());
 
 
 app.use(express.json());
