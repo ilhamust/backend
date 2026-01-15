@@ -29,6 +29,9 @@ app.get("/", (_, res) => res.json({
   status: "✅ Backend berjalan dengan baik!",
   timestamp: new Date().toISOString()
 }));
+app.get("/api/test", (req, res) => {
+  res.json({ ok: true });
+});
 
 app.get("/debug-env", (req, res) => {
   res.json({
