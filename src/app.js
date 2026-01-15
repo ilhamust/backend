@@ -10,7 +10,8 @@ const app = express();
 app.use(cors({
   origin: [
     "http://localhost:5173",
-    "https://frontend-web-t636-dncpdman1-ilhamusts-projects.vercel.app"
+    "https://frontend-web-t636-dncpdman1-ilhamusts-projects.vercel.app",
+    "https://roudlotushsholihin.ponpes.id"
   ],
   methods: "GET,POST,DELETE",
   allowedHeaders: "Content-Type, Authorization"
