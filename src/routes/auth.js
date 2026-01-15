@@ -1,11 +1,12 @@
+console.log("AUTH ROUTES LOADED");
 import express from "express";
 import { createClient } from "@supabase/supabase-js";
 import dotenv from "dotenv";
 import bcrypt from "bcrypt";
 import jwt from "jsonwebtoken";
-
+console.log("AUTH ROUTES LOADED");
 dotenv.config();
-
+console.log("AUTH ROUTES LOADED");
 const router = express.Router();
 const supabase = createClient(process.env.SUPABASE_URL, process.env.SUPABASE_ANON_KEY);
 
